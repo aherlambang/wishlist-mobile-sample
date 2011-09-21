@@ -18,7 +18,7 @@ This README will walk you through the following:
 
 Your install package should have the following files:
 
-* Backend Server (Wishlist_Server.zip)
+* Backend Server (Server)
   * photo_upload.php
   * product.php
   * wishlists/birthday.php
@@ -26,11 +26,20 @@ Your install package should have the following files:
   * wishlists/wedding.php
   * images
  
-* Android Project (Wishlist_Android.zip)
+* Android Project (Android)
   * Android project containing the app
 
-* iOS Project (Wishlist_iOS.zip)
+* iOS Project (iOS)
   * Xcode project containing the app
+
+**Get the Sample Code**
+===================
+
+* Install [Git](http://git-scm.com/).
+
+* Pull the samples package from GitHub:
+
+    git clone git://github.com/facebook/wishlist-mobile-sample
 
 **Creating your Facebook app**
 ==============================
@@ -118,7 +127,7 @@ You can now set up the application's action types, object types, and timeline un
 * Fetch your [server app code](http://devcenter.heroku.com/articles/facebook#editing_your_app)
 
 * Add the Wishlist server-side PHP files to your Heroku app:
-  * Uncompress the server side package in your heroku local app main directory
+  * Copy the Server/* files to your Heroku local app main directory
   * Commit and push the local additions up to Heroku
     * git add .
     * git commit -am "wishlist"
@@ -201,12 +210,9 @@ You will need to have the Facebook application on the handset or the emulator to
 **Installing the iOS app**
 ==========================
 
-**Unpacking the app**
-
-1. Unzip the iOS distribution file. This should create a folder called Wishlist.
-2. Using Xcode open up Wishlist/Wishlist.xcodeproj
-
 **Configuring the app**
+
+1. Using Xcode open up Wishlist/Wishlist.xcodeproj
 
 1. Set up the Facebook iOS SDK:
    1. Get the latest Facebook iOS SDK from GitHub: git clone git://github.com/facebook/facebook-ios-sdk.git
