@@ -1,12 +1,13 @@
 **Wishlist Application**
 ========================
 
-This sample application demonstrates the how to build an Android and iOS app to publish custom actions. The sample also includes a server-side component to host the Open Graph objects.
+This sample application demonstrates how to build an Android and iOS app to publish custom Open Graph actions. The sample also includes a server-side component to host the Open Graph objects.
 
-Users of the app can take a photo of a product and add the product to a wish list that they can then share it with friends. The product gets stored on the backend server before publishing to Facebook.
+Users of the app can take a photo of a product, add the product to a wishlist, then share the story with friends. The product gets stored on the backend server before publishing the story to Facebook.
 
 This README will walk you through the following:
 
+* Getting Started
 * Creating your Facebook app
 * Setting up your Open Graph action types, object types, and timeline units
 * Setting up the the backend server using Heroku Cloud Services
@@ -32,8 +33,7 @@ Your install package should have the following files:
 * iOS Project (iOS)
   * Xcode project containing the app
 
-**Get the Sample Code**
-===================
+To get the sample code do the following:
 
 * Install [Git](http://git-scm.com/).
 
