@@ -561,7 +561,7 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     [locationManager startUpdatingLocation];
     // Time out if it takes too long to get a reading.
-    [self performSelector:@selector(processLocationData) withObject:nil afterDelay:5.0];
+    [self performSelector:@selector(processLocationData) withObject:nil afterDelay:10.0];
 }
 
 #pragma mark -

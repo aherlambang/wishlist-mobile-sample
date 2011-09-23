@@ -16,9 +16,6 @@
 
 #import <UIKit/UIKit.h>
 
-// Facebook App ID (fill this in with your app id)
-#define kAppId @""
-
 @class HomeViewController;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate,UIAlertViewDelegate> {
@@ -29,5 +26,7 @@
 @property (nonatomic, retain) HomeViewController *viewController;
 
 - (void) facebookAppConfigured;
+
+extern NSString * const kAppId; 
 
 @end

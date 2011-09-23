@@ -17,6 +17,12 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h"
 
+// Your Facebook APP Id must be set before running this example
+// See http://developers.facebook.com/apps
+// Also, your application must bind to the fb[app_id]:// URL
+// scheme (substitue [app_id] for your real Facebook app id).
+NSString * const kAppId = nil;
+
 @implementation AppDelegate
 
 
