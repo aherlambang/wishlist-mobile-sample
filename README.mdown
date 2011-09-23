@@ -85,7 +85,7 @@ You can now set up the application's action types, object types, and timeline un
 * Now create the timeline units:
   * Click on "Create New Aggregation"
   * _Data to Display_ select "Product"
-  * _Sort By_ select "Most Recent Product"
+  * _Sort By_ select "Most Recent Product" (if you cannot select this option, keep the default)
   * _Aggregation Title_ enter "Added on Wishlist"
   * _Caption Lines_ first line, enter "{wishlist.title}"
   * _Caption Lines_ first line, enter {start_time | date("fb_relative")} at {place}
@@ -93,7 +93,7 @@ You can now set up the application's action types, object types, and timeline un
   * Click on "Create New Aggregation"
   * _Data to Display_ select "Product"
   * _Layout Style_ select the Gallery option
-  * _Sort By_ select "Most Recent Product"
+  * _Sort By_ select "Most Recent Product" (if you cannot select this option, keep the default)
   * _Aggregation Title_ enter "Birthday Wishlist"
   * _Caption Lines_ first line, enter "{product.title} at {place}"
   * Click the Advanced link
