@@ -598,7 +598,7 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
 - (void) sendInfoButtonClicked:(id) sender {
     // Do some data checks and throw an error if information has not been
     // provided
-    if ((self.productImage == nil)) {
+    if (self.productImage == nil) {
         [self showAlertErrorMessage:@"Please add a product photo." ];
     } else if ([self.productName isEqualToString:@""]) {
         [self showAlertErrorMessage:@"Please enter a product name." ];
