@@ -219,13 +219,13 @@ You will need to have the Facebook Android application on the handset or the emu
    3. Drag the src folder to the Wishlist project. You may choose to copy the items over into your project.
 
 2. Set up your App ID:
-    1. Open up AppDelegate.h, add your app ID by changing:
+    1. Open up AppDelegate.m, add your app ID by changing:
 
-             #define kAppId @""
+             NSString * const kAppId = nil;
 
      to:
 
-             #define kAppId @"YOUR_APP_ID"
+             NSString * const kAppId = @"YOUR_APP_ID";
 
    1. Open up Wishlist/Supporting Files/Wishlist-Info.plist
    1. Navigate to URL types > Item 0 > URL Schemes > Item 0
