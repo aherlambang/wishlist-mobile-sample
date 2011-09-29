@@ -129,8 +129,8 @@ You can now set up the application's action types, object types, and timeline un
 * Add the Wishlist server-side PHP files to your Heroku app:
   * Copy the Server/* files to your Heroku local app main directory
   * For the files product.php and wishlists/*.php wherever you find them, replace:
-    * `YOUR_APP_ID` with your app ID
-    * `YOUR_HEROKU_SERVER_URL` with your Heroku host URL
+     * `YOUR_APP_ID` with your app ID
+     * `YOUR_HEROKU_SERVER_URL` with your Heroku host URL
   * Commit and push the local additions up to Heroku
     * git add .
     * git commit -am "wishlist"
