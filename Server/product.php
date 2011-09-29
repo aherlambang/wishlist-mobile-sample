@@ -12,7 +12,7 @@ function curPageURL() {
 
 <html>
   <head prefix="og: http://ogp.me/ns# product: http://ogp.me/ns/product#">
-          <meta property="fb:app_id"         content="233754036673011">
+          <meta property="fb:app_id"         content="YOUR_APP_ID">
 	  <meta property="og:url"         content="<?php echo strip_tags(curPageURL());?>"> 
 	  <meta property="og:type"                content="product"> 
 	  <meta property="og:title"               content="<?php echo strip_tags($_REQUEST['name']);?>"> 
