@@ -131,6 +131,7 @@ You can now set up the application's action types, object types, and timeline un
   * For the files product.php and wishlists/*.php wherever you find them, replace:
      * `YOUR_APP_ID` with your app ID
      * `YOUR_HEROKU_SERVER_URL` with your Heroku host URL
+     * `YOUR_APP_NAMESPACE` with the namespace for your Facebook app
   * Commit and push the local additions up to Heroku
     * git add .
     * git commit -am "wishlist"
