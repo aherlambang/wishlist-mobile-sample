@@ -47,7 +47,7 @@ To get the sample code do the following:
 First set up a Facebook app using the Developer app:
 
 * Create a new [Facebook app](https://developers.facebook.com/apps)
-* Edit the app's Basic settings: Add a entry for your namespace `App Namespace`. You can choose a simple string to identify your app, such as ''wishlist'', but it must be unique.
+* Enter the `App Namespace` when creating your app. You can choose a simple string to identify your app, such as ''wishlist'', but it must be unique.
 
 **Setting up your Open Graph action types, object types, and timeline units**
 =============================================================================
@@ -243,3 +243,10 @@ You will need to have the Facebook Android application on the handset or the emu
    1. Open up HomeViewController.m
    1. Replace the kBackEndServer string with your back-end server URL
    1. In the apiGraphAddToWishlist method, replace: `samplewishlist:add_to` with: `YOUR_APP_NAMESPACE:add_to` where YOUR_APP_NAMESPACE corresponds to the value defined earlier in the Facebook dev app.
+
+**Configuring Facebook distribution**
+
+* Edit your [Dev app](https://developers.facebook.com/apps) Basic Settings to add the [Native iOS App settings](https://developers.facebook.com/docs/mobile/ios/build/#linktoapp):
+  * Modify _iPhone App Store ID_ to add any valid iTunes app ID
+  * Enable the _Configured for iOS SSO_ setting
+

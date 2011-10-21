@@ -28,6 +28,7 @@ typedef enum apiCall {
 @interface HomeViewController : UIViewController
 <FBRequestDelegate,
 FBSessionDelegate,
+FBDialogDelegate,
 UIPickerViewDelegate,
 UITableViewDataSource,
 UITableViewDelegate,

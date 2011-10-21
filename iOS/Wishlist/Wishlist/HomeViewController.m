@@ -632,6 +632,22 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     textField.text = @"";
 }
 
+/*
+ Send the app request
+ */
+
+//sendRequestButtonClicked
+- (void) sendRequestButtonClicked:(id) sender {
+    NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   @"Check out this awesome app I am using.",  @"message",
+                                   @"Check this out", @"notification_text",
+                                   nil];
+     
+    [facebook dialog:@"apprequests"
+                      andParams:params
+                    andDelegate:self];
+}
+
 #pragma mark - View lifecycle
 
 
@@ -738,8 +754,10 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     [headerView addSubview:logoutButton];
     
     UIView *footerView = [[UIView alloc] 
-                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 60)];
+                  initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 120)];
     footerView.autoresizingMask =  UIViewAutoresizingFlexibleWidth;
+    
+    // Add to Timeline button
     UIButton *addToTimeLineButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     addToTimeLineButton.frame = CGRectMake(10, 10, (self.view.bounds.size.width - 20), 40);
     addToTimeLineButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
@@ -748,6 +766,16 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     [addToTimeLineButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [addToTimeLineButton addTarget:self action:@selector(sendInfoButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:addToTimeLineButton];
+    
+    // Send App Request button
+    UIButton *sendRequestButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    sendRequestButton.frame = CGRectMake(10, 70, (self.view.bounds.size.width - 20), 40);
+    sendRequestButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
+    [sendRequestButton setTitle:@"Send Request" 
+                         forState:UIControlStateNormal];
+    [sendRequestButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [sendRequestButton addTarget:self action:@selector(sendRequestButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [footerView addSubview:sendRequestButton];
     
     infoTableView = [[UITableView alloc] initWithFrame:self.view.bounds 
                                                 style:UITableViewStylePlain];
@@ -1198,6 +1226,7 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     NSString* responseString = [[[NSString alloc] initWithData:receivedData
                                                       encoding:NSUTF8StringEncoding]
                                 autorelease];
+    NSLog(@"Response from photo upload: %@",responseString);
     [self clearConnection];
     // Check the photo upload server completes successfully
     if ([responseString rangeOfString:@"ERROR:"].location == NSNotFound) {
@@ -1371,6 +1400,32 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     } else {
         [self showAlertErrorMessage:@"There was an error making your request." ];
     }
+}
+
+#pragma mark - FBDialogDelegate Methods
+
+/**
+ * Called when a UIServer Dialog successfully return.
+ */
+- (void)dialogDidComplete:(FBDialog *)dialog {
+    UIAlertView *alertView = [[UIAlertView alloc] 
+                              initWithTitle:@"Success" 
+                              message:@"Your request was sent out." 
+                              delegate:self 
+                              cancelButtonTitle:@"Done" 
+                              otherButtonTitles:nil, 
+                              nil];
+    [alertView show];
+    [alertView release];
+}
+
+- (void) dialogDidNotComplete:(FBDialog *)dialog {
+    NSLog(@"Dialog dismissed.");
+}
+
+- (void)dialog:(FBDialog*)dialog didFailWithError:(NSError *)error {
+    NSLog(@"Error message: %@", [[error userInfo] objectForKey:@"error_msg"]);
+    [self showAlertErrorMessage:@"There was an error making your request." ];
 }
 
 @end
