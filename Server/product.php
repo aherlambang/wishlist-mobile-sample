@@ -11,10 +11,10 @@ function curPageURL() {
 ?>
 
 <html>
-  <head prefix="og: http://ogp.me/ns# YOUR_APP_NAMESPACE: http://ogp.me/ns/fb/YOUR_APP_NAMESPACE#">
-          <meta property="fb:app_id"         content="YOUR_APP_ID">
+  <head prefix="og: http://ogp.me/ns# wishlist_og_test: http://ogp.me/ns/fb/wishlist_og_test#">
+          <meta property="fb:app_id"         content="322850264424989">
 	  <meta property="og:url"         content="<?php echo strip_tags(curPageURL());?>"> 
-	  <meta property="og:type"                content="YOUR_APP_NAMESPACE:product"> 
+	  <meta property="og:type"                content="wishlist_og_test:product"> 
 	  <meta property="og:title"               content="<?php echo strip_tags($_REQUEST['name']);?>"> 
 	  <meta property="og:image"               content="<?php echo 'http://' . $_SERVER["SERVER_NAME"] . '/images/' . strip_tags($_REQUEST['image']);?>"> 
       <title>Product Name</title>

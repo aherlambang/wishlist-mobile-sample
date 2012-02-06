@@ -21,7 +21,7 @@
 // See http://developers.facebook.com/apps
 // Also, your application must bind to the fb[app_id]:// URL
 // scheme (substitue [app_id] for your real Facebook app id).
-NSString * const kAppId = nil;
+NSString * const kAppId = @"356555051036485";
 
 @implementation AppDelegate
 
