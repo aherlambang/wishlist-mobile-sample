@@ -25,7 +25,7 @@
 #define PLACE_NAME_TAG 1003
 
 // Server for uploading photos and hosting objects 
-static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
+static NSString *kBackEndServer = @"https://freezing-meadow-1199.herokuapp.com";
 
 @implementation HomeViewController
 
@@ -198,14 +198,29 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     // - image, property for the action
     [params setValue:[productImageData objectForKey:@"image_url"] forKey:@"image"];
 
+    
+    NSMutableDictionary* params1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                   kAppId, @"app_id",
+                                   @"http://developers.facebook.com/docs/reference/dialogs/", @"link",
+                                   @"http://fbrell.com/f8.jpg", @"picture",
+                                   @"Facebook Dialogs", @"name",
+                                   @"Reference Documentation", @"caption",
+                                   @"Using Dialogs to interact with users.", @"description",
+                                   @"Facebook Dialogs are so easy!",  @"message",
+                                   nil];
+    
+    [facebook dialog:@"feed" andParams:params1 andDelegate:self];
+    
+    /*
     // Make the Graph API call to add to the wishlist
-    [facebook requestWithGraphPath:@"me/samplewishlist:add_to" 
+    [facebook requestWithGraphPath:@"me/wishlist_og_test:add_to" 
                          andParams:params
                      andHttpMethod:@"POST"
                        andDelegate:self];
     
     [params release];
     [productLink release];
+    */
 }
 
 #pragma mark - Private Methods
@@ -1191,6 +1206,7 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     }
 }
 
+
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     if ([error code] != kCLErrorLocationUnknown) {
         [locationManager stopUpdatingLocation];
@@ -1370,7 +1386,7 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
         }
         case kAPIGraphWishlist: {
             // Wishlist call
-            //NSLog(@"Result: %@", result);
+            NSLog(@"Result: %@", result);
             UIAlertView *alertView = [[UIAlertView alloc] 
                                       initWithTitle:@"Success" 
                                       message:@"Your wishlist was added to your timeline." 
@@ -1400,6 +1416,9 @@ static NSString *kBackEndServer = @"https://growing-leaf-2900.herokuapp.com";
     } else {
         [self showAlertErrorMessage:@"There was an error making your request." ];
     }
+    
+    NSLog(@"%@", [error localizedDescription]);
+    NSLog(@"Err details: %@", [error description]);
 }
 
 #pragma mark - FBDialogDelegate Methods
